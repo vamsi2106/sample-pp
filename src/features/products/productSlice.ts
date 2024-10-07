@@ -1,11 +1,19 @@
-// src/features/productsSlice.ts
+import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
+import axios from "axios";
 
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+interface Rating {
+  rate: number; 
+  count: number; 
+}
 
 interface Product {
   id: number;
   name: string;
   price: number;
+  description: string;      
+  category: string;         
+  image: string;           
+  rating: Rating; 
 }
 
 interface ProductsState {
@@ -16,16 +24,21 @@ const initialState: ProductsState = {
   items: [],
 };
 
+export const getAllProducts=createAsyncThunk('FETCHING DATA',async()=>{
+  const res=await axios.get("https://fakestoreapi.com/products")
+  return res.data;
+})
+
 const productsSlice = createSlice({
   name: "products",
   initialState,
   reducers: {
-    addProduct: (state, action: PayloadAction<Product>) => {
-      state.items.push(action.payload);
-    },
-    // Other reducers can be added here
   },
+  extraReducers:(builder)=>{
+    builder.addCase(getAllProducts.fulfilled,(state,action)=>{
+      state.items=action.payload
+    })
+  }
 });
 
-export const { addProduct } = productsSlice.actions;
 export default productsSlice.reducer;
