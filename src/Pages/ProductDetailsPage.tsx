@@ -1,5 +1,4 @@
 import React from "react";
-import { useNavigate, useParams } from "react-router-dom";
 import { useSelector,useDispatch } from "react-redux";
 import { addToCart } from "../features/cart/cartSlice";
 
@@ -8,16 +7,12 @@ const ProductDetailsPage: React.FC = () => {
   // const { id } = useParams<{ id: string }>();
 
   const dispatch=useDispatch()
-  const navigate=useNavigate()
 
   const product:any = useSelector((s:any )=> s.products.selectedItem)
   const {title,description,image,rating,category}=product
 
   const onAddToCart=()=>{
-
     dispatch(addToCart(product));
-    navigate('/cart');
-
   }
 
 

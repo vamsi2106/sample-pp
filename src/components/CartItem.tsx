@@ -7,6 +7,7 @@ interface CartItemProps {
 }
 
 const CartItem: React.FC<CartItemProps> = ({ title, quantity, price }) => {
+ 
 
   const decreaseQuantity = () =>{
 
