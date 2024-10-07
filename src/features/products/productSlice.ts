@@ -18,10 +18,12 @@ interface Product {
 
 interface ProductsState {
   items: Product[];
+  selectedItem:Product|null
 }
 
 const initialState: ProductsState = {
   items: [],
+  selectedItem:null
 };
 
 export const getAllProducts=createAsyncThunk('FETCHING DATA',async()=>{
@@ -33,6 +35,11 @@ const productsSlice = createSlice({
   name: "products",
   initialState,
   reducers: {
+    selectProduct(state,action){
+        let productId=action.payload 
+        let item=state.items.find(item=>item.id===productId)
+        state.selectedItem=item||null
+    }
   },
   extraReducers:(builder)=>{
     builder.addCase(getAllProducts.fulfilled,(state,action)=>{
