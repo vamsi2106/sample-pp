@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { selectProduct } from "../features/products/productSlice";
+import { useNavigate } from "react-router-dom";
 
 export interface Product{
   id:number,
@@ -22,11 +23,13 @@ export interface ProductItemProps{
 
 const ProductItem: React.FC<ProductItemProps> = ({productDetails}:ProductItemProps) => {
   const dispatch = useDispatch()
+  const navigate= useNavigate()
   // const selectedItem = useSelector((s:any) => s.products.selectedItem)
   const {id, title,price,description,image,rating } = productDetails;
   const onClickViewMore = () =>{
     // functionality Needs to be Completed...
     dispatch<any>(selectProduct(id));
+    navigate(`/product/${id}`)
     
   }
 

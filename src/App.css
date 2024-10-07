@@ -76,3 +76,16 @@ footer {
   cursor: pointer;
 }
 
+/* product-detailed-page.css */
+
+.product-detailed-page{
+
+  padding: 10px;
+
+
+  img{
+    height: 300px;
+    width: 300px;
+  }
+
+}
