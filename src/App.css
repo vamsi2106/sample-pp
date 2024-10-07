@@ -48,3 +48,21 @@ footer {
 }
 
 
+/* not-found-page.css */
+
+.not-found-container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.nf-btn {
+  padding: 10px;
+  background-color: #4094ef;
+  color: white;
+  border-radius: 7px;
+  cursor: pointer;
+}
