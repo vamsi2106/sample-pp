@@ -1,4 +1,6 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { selectProduct } from "../features/products/productSlice";
 
 export interface Product{
   id:number,
@@ -19,13 +21,16 @@ export interface ProductItemProps{
 }
 
 const ProductItem: React.FC<ProductItemProps> = ({productDetails}:ProductItemProps) => {
-  
-  const { title,price,description,image,rating } = productDetails;
+  const dispatch = useDispatch()
+  // const selectedItem = useSelector((s:any) => s.products.selectedItem)
+  const {id, title,price,description,image,rating } = productDetails;
   const onClickViewMore = () =>{
     // functionality Needs to be Completed...
-    
+    dispatch<any>(selectProduct(id));
     
   }
+
+  // console.log(selectedItem);
   return (
     <div className="product-item">
       <img src={image} alt={title} style={{"width": "100px"}} />
