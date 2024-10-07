@@ -2,8 +2,19 @@
 
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
+interface Rating {
+  rate: number; 
+  count: number; 
+}
+
 interface CartItem {
   id: number;
+  name: string;
+  price: number;
+  description: string;
+  category: string;
+  image: string;
+  rating: Rating;
   quantity: number;
 }
 
@@ -23,6 +34,7 @@ const cartSlice = createSlice({
       const item = state.items.find((i) => i.id === action.payload.id);
       if (item) {
         item.quantity += action.payload.quantity;
+        console.log(state.items)
       } else {
         state.items.push(action.payload);
       }
