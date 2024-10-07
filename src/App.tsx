@@ -16,7 +16,10 @@ const App: React.FC = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/cart" element={<CartPage />} />
+        <Route path="/products" element={<ProductPage />} />
         <Route path="/product/:id" element={<ProductPage />} />
+       
+       
         {/* Uncomment and adjust the following line for future use
         <Route element={<ProtectedRoute />}>
           <Route path="/protected" element={<ProtectedComponent />} />

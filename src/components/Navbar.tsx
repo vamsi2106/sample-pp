@@ -1,18 +1,25 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "../App.css";
 
 const Navbar: React.FC = () => {
   return (
-    <nav>
+    <nav className="navbar">
       <ul>
         <li>
-          <Link to="/">Home</Link>
+          <Link className="link" to="/">
+            Home
+          </Link>
         </li>
         <li>
-          <Link to="/products">Products</Link>
+          <Link className="link" to="/products">
+            Products
+          </Link>
         </li>
         <li>
-          <Link to="/cart">Cart</Link>
+          <Link className="link" to="/cart">
+            Cart
+          </Link>
         </li>
       </ul>
     </nav>
