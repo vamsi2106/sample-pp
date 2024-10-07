@@ -31,10 +31,12 @@ footer {
   width: 100%;
   position: fixed;
 }
+/* cart page css*/
 
 .cart-container {
   margin-bottom: 50px;
 }
+
 
 .product-item {
   border: 1px solid #ddd;
@@ -45,9 +47,32 @@ footer {
   border: 1px solid #ddd;
   padding: 15px;
   margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.quantity-container{
+  display: flex;
 }
 
 
-.products-div{
-  margin-bottom: 50px;
+
+/* not-found-page.css */
+
+.not-found-container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
+
+.nf-btn {
+  padding: 10px;
+  background-color: #4094ef;
+  color: white;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
