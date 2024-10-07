@@ -18,9 +18,10 @@ footer {
   text-align: center;
   padding: 10px;
   background-color: #f8f9fa;
-  position: fixed;
+  position: absolute;
   bottom: 0;
   width: 100%;
+  position: fixed;
 }
 
 .cart-container{
@@ -36,21 +37,4 @@ footer {
   border: 1px solid #ddd;
   padding: 15px;
   margin: 10px 0;
-  display: flex;
-  justify-content: space-between;
-}
-
-
-.quantity-container{
-  display: flex;
-  align-items: center;
-  width: 30%;
-}
-
-.cart-item-title{
-  width:35%
-}
-
-.price-container{
-  width:35%
 }
