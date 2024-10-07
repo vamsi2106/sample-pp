@@ -1,3 +1,4 @@
+
 import React from "react";
 import CartItem from "../components/CartItem";
 
@@ -19,3 +20,4 @@ const CartPage: React.FC = () => {
 };
 
 export default CartPage;
+
