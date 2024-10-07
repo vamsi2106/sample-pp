@@ -14,10 +14,7 @@ const ProductDetailsPage: React.FC = () => {
   const {title,description,image,rating,category}=product
 
   const onAddToCart=()=>{
-
     dispatch(addToCart(product));
-    navigate('/cart');
-
   }
 
 

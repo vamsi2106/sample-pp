@@ -1,18 +1,16 @@
 
 import React from "react";
 import CartItem from "../components/CartItem";
+import { useSelector } from "react-redux";
 
 const CartPage: React.FC = () => {
-  const cartItems = [
-    { title: "Laptop", price:60000,quantity:1},
-    { title: "Smartphone",price:35000, quantity: 2 },
-    { title: "earphones",price:5000, quantity: 2 },
-  ];
-
+  const {cart} = useSelector((state:any) => state)
+  const cartItems = cart.items
+  
   return (
     <div className="cart-container">
       <h2>Your Cart</h2>
-      {cartItems.map((item,index) => (
+      {cartItems.map((item:any,index:number) => (
         <CartItem key={index} title={item.title} price = {item.price} quantity = {item.quantity}/>
       ))}
     </div>
