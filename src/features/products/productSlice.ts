@@ -20,12 +20,7 @@ const productsSlice = createSlice({
   name: "products",
   initialState,
   reducers: {
-    addProduct: (state, action: PayloadAction<Product>) => {
-      state.items.push(action.payload);
-    },
-    // Other reducers can be added here
   },
 });
 
-export const { addProduct } = productsSlice.actions;
 export default productsSlice.reducer;
