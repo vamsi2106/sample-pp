@@ -22,6 +22,8 @@ const ProductItem: React.FC<ProductItemProps> = ({productDetails}:ProductItemPro
   
   const { title,price,description,image,rating } = productDetails;
   const onClickViewMore = () =>{
+    // functionality Needs to be Completed...
+    
     
   }
   return (
