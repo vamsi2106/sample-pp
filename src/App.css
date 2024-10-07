@@ -16,11 +16,11 @@ nav ul li {
 
 footer {
   text-align: center;
-  padding: 20px;
+  padding: 10px;
   background-color: #f8f9fa;
-  position: absolute;
   bottom: 0;
   width: 100%;
+  position: fixed;
 }
 
 .product-item,
@@ -28,4 +28,10 @@ footer {
   border: 1px solid #ddd;
   padding: 15px;
   margin: 10px 0;
+}
+
+
+
+.products-div{
+  margin-bottom: 50px;
 }
