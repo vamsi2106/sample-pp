@@ -30,9 +30,9 @@ const ProductItem: React.FC<ProductItemProps> = ({productDetails}:ProductItemPro
     <div className="product-item">
       <img src={image} alt={title} style={{"width": "100px"}} />
       <h4>{title}</h4>
-      <p>{price}</p>
-      <p>{description}</p>
-      <p>{rating.rate}</p>
+      <p>Price: {price}</p>
+      <p>Description: {description}</p>
+      <p>Rating: {rating.rate}</p>
       <button type="button" onClick={onClickViewMore}>View More</button>
     </div>
   );
