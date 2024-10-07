@@ -8,6 +8,7 @@ import ProductPage from "./Pages/ProductsPage"; // Assuming you have a ProductPa
 // import ProtectedRoute from './routes/ProtectedRoute'; // Commented for future use
 import "./App.css";
 import NotFoundPage from "./Pages/NotFoundPage";
+import ProductDetailsPage from "./Pages/ProductDetailsPage";
 
 const App: React.FC = () => {
   return (
@@ -17,7 +18,7 @@ const App: React.FC = () => {
         <Route path="/" element={<HomePage />} />
         <Route path="/cart" element={<CartPage />} />
         <Route path="/products" element={<ProductPage />} />
-        <Route path="/product/:id" element={<ProductPage />} />
+        <Route path="/product/:id" element={<ProductDetailsPage />} />
        
        
         {/* Uncomment and adjust the following line for future use
