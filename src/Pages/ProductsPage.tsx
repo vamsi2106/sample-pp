@@ -44,8 +44,8 @@ const ProductsPage: React.FC = () => {
 
   return (
     <div className="products-div">
-      <h2>Products</h2>
-      <div>
+      <h2 align="center">Products</h2>
+      <div className="product-container">
         {products.map((product) => (
           <ProductItem key={product.id} productDetails={product} />
         ))}
