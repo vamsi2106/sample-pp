@@ -39,7 +39,15 @@ const cartSlice = createSlice({
         state.items.push({...action.payload, quantity:1});
       }
     },
-    // Other reducers can be added here
+    decreaseQuantity:(state,action)=>{
+        const item=state.items.find((item)=>item.id===action.payload.id)
+        if(item!.quantity<=0){
+            state.items=state.items.filter((i)=>i.id!==item?.id)
+        }
+        else{
+          item!.quantity+=1
+        }
+    }
   },
 });
 
