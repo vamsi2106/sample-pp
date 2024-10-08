@@ -69,7 +69,10 @@ const Navbar: React.FC = () => {
                   className="userProfileImg"
                   alt="Profile"
                 />
-                <span className="link">{user?.username}</span>
+                <span className="link">
+                  {/* {user?.username} */}
+                  Erripook
+                  </span>
               </li>
               <li>
                 <a className="link" onClick={handleLogout}>
