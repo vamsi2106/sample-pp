@@ -22,7 +22,7 @@ const Navbar: React.FC = () => {
   );
 
   useEffect(() => {
-    dispatch(checkAuth()); // Check authentication state on load
+    dispatch<any>(checkAuth()); // Check authentication state on load
   }, [dispatch]);
 
   const handleLogout = () => {
