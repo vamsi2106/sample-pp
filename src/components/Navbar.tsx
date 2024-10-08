@@ -65,13 +65,12 @@ const Navbar: React.FC = () => {
             <>
               <li>
                 <img
-                  src="https://res.cloudinary.com/dywrzseia/image/upload/v1728390416/konderhuk_f1ndyp.jpg"
+                  src={user?.userimg}
                   className="userProfileImg"
                   alt="Profile"
                 />
                 <span className="link">
-                {/*{user?.username}*/}
-                Prasad
+                {user?.username}
                 </span>
               </li>
               <li>
