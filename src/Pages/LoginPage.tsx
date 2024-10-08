@@ -14,7 +14,7 @@ const LoginPage: React.FC = () => {
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    dispatch(loginUser({ username, password })).then((response) => {
+    dispatch<any>(loginUser({ username, password })).then((response:any) => {
       if (loginUser.fulfilled.match(response)) {
         navigate("/"); // Navigate after successful login
       } else {
