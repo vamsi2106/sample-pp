@@ -36,21 +36,27 @@ const ProductItem: React.FC<ProductItemProps> = ({
   // console.log(selectedItem);
   return (
     <>
-      <div className="card w-25 p-2 d-flex flex-column justify-content-center">
-        <img className="" src={image} alt={title} style={{ width: "50%" }} />
+      <div className="product-card-item">
+        <img className="product-img" src={image} alt={title} />
         <div className="card-body">
-          <h4>{title}</h4>
-          <p>Price: {price}</p>
-          <p>Description: {description.slice(0, 40) + "..."}</p>
+          <h6>{title}</h6>
+          <p>
+            <strong>Price:</strong> {price}
+          </p>
+          <p>
+            {" "}
+            <strong>Description: </strong>
+            {description.slice(0, 40) + "..."}
+          </p>
           <p>Rating: {rating.rate}</p>
-          <button
-            type="button"
-            className="btn btn-primary"
-            onClick={onClickViewMore}
-          >
-            View More
-          </button>
         </div>
+        <button
+          type="button"
+          className="btn btn-primary"
+          onClick={onClickViewMore}
+        >
+          View More
+        </button>
       </div>
     </>
   );

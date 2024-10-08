@@ -9,8 +9,8 @@ nav ul {
   padding: 20px;
   background-color: rgb(12, 5, 5);
   color: aliceblue;
-  display: flex;
-  position: static;
+  position: fixed;
+  margin-top: 60px;
 }
 
 nav ul li {
@@ -26,16 +26,16 @@ nav ul li {
 footer {
   text-align: center;
   padding: 10px;
-  background-color: #f8f9fa;
+  background-color: #1a1c1d;
   color: #ddd;
   bottom: 0;
   width: 100%;
-  position: fixed;
 }
 /* cart page css*/
 
 .cart-container {
-  margin-bottom: 50px;
+  margin-top: 60px;
+  min-height: 80vh;
 }
 
 .product-item {
@@ -83,4 +83,42 @@ footer {
     height: 300px;
     width: 300px;
   }
+}
+
+.homepage {
+  min-height: 80vh;
+  margin-top: 60px;
+}
+
+.product-detailed-page {
+  min-height: 80vh;
+  margin-top: 60px;
+}
+
+/* product item and product page css*/
+.products-div {
+  margin-top: 60px;
+}
+.product-card-item {
+  margin: 10px;
+  width: 20vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid rgb(34, 34, 34);
+  padding: 10px;
+}
+
+.product-img {
+  width: 8vw;
+  height: 20vh;
+  align-self: center;
+}
+
+.product-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 }

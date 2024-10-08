@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 const HomePage: React.FC = () => {
 
   return (
-    <div>
+    <div className="homepage">
       <h1>Welcome to Our E-Commerce Website!</h1>
       <p>Find the best products here.</p>
     </div>
