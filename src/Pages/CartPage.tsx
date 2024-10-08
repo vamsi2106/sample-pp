@@ -16,7 +16,7 @@ const CartPage: React.FC = () => {
     <div className="cart-container">
       <h2>Your Cart</h2>
       {cartItems.map((item:any,index:number) => (
-        <CartItem key={index} title={item.title} price = {item.price} quantity = {item.quantity}/>
+        <CartItem key={index} item={item} id={item.id} title={item.title} price = {item.price} quantity = {item.quantity}/>
       ))}
       <div className="cart-details-container">
           <p>
