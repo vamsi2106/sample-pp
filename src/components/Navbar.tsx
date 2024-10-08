@@ -71,7 +71,7 @@ const Navbar: React.FC = () => {
                 />
                 <span className="link">
                 {/*{user?.username}*/}
-                Konderhukuu
+                Prasad
                 </span>
               </li>
               <li>
