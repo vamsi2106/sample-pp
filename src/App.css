@@ -3,6 +3,8 @@ body {
   padding: 0px;
   color: aliceblue;
 }
+nav {
+}
 
 nav ul {
   width: 100%;
@@ -12,6 +14,9 @@ nav ul {
   color: aliceblue;
   position: fixed;
   margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 nav ul li {
@@ -38,8 +43,6 @@ footer {
   margin-top: 70px;
   height: 70vh;
   overflow-y: auto;
-
-
 }
 
 .product-item {
@@ -56,15 +59,13 @@ footer {
   align-items: center;
 }
 
-.cart-item-title{
+.cart-item-title {
   width: 60%;
 }
 
-.cart-item-price{
+.cart-item-price {
   width: 20%;
 }
-
-
 
 .quantity-container {
   display: flex;
@@ -72,38 +73,31 @@ footer {
   align-items: center;
   width: 20%;
 
-  p{
+  p {
     margin: 0;
   }
 
-  button{
+  button {
     height: 30px;
     width: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0px;
-   
   }
-
 }
 
-
-
-.cart-details-container{
+.cart-details-container {
   display: flex;
   flex-direction: column;
   align-items: end;
   padding: 10px;
 
-  button{
+  button {
     width: 10vw;
     margin: 0px;
-    
   }
-
 }
-
 
 /* not-found-page.css */
 
@@ -136,10 +130,8 @@ footer {
 }
 
 .homepage {
-
   background-image: url(../src/assets/photos/home-bg1.jpg);
   background-size: cover;
-  
 
   min-height: 80vh;
   margin-top: 60px;
@@ -186,6 +178,10 @@ footer {
   min-height: 90vh;
 }
 
-
-
-
+.userProfileImg {
+  height: 50px;
+  width: 50px;
+  border: 2px solid whitesmoke;
+  margin-right: 5px;
+  border-radius: 20px;
+}
