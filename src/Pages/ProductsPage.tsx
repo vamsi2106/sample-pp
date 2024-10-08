@@ -39,7 +39,7 @@ const ProductsPage: React.FC = () => {
   }, []);
 
   if (products.length === 0) {
-    return <h1>Loading....</h1>;
+    return <h1 className="products-div">Loading....</h1>;
   }
 
   return (

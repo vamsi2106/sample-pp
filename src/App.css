@@ -35,8 +35,11 @@ footer {
 /* cart page css*/
 
 .cart-container {
-  margin-top: 60px;
-  min-height: 80vh;
+  margin-top: 70px;
+  height: 70vh;
+  overflow-y: auto;
+
+
 }
 
 .product-item {
@@ -50,11 +53,57 @@ footer {
   margin: 10px 0;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
+
+.cart-item-title{
+  width: 60%;
+}
+
+.cart-item-price{
+  width: 20%;
+}
+
+
 
 .quantity-container {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+
+  p{
+    margin: 0;
+  }
+
+  button{
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+   
+  }
+
 }
+
+
+
+.cart-details-container{
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  padding: 10px;
+
+  button{
+    width: 10vw;
+    margin: 0px;
+    
+  }
+
+}
+
 
 /* not-found-page.css */
 
@@ -87,6 +136,11 @@ footer {
 }
 
 .homepage {
+
+  background-image: url(../src/assets/photos/home-bg1.jpg);
+  background-size: cover;
+  
+
   min-height: 80vh;
   margin-top: 60px;
 }
@@ -131,9 +185,7 @@ footer {
 .loginPage {
   min-height: 90vh;
 }
-.userProfile {
-  border: 2px solid whitesmoke;
-  margin-right: 6px;
-  height: 5vh;
-  border-radius: 30px;
-}
+
+
+
+

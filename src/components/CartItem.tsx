@@ -29,14 +29,14 @@ const CartItem: React.FC<CartItemProps> = ({id, item,title, quantity, price }) =
 
   return (
     <div className="cart-item">
-      <h4 className="cart-itme-title">{title}</h4>
+      <h4 className="cart-item-title">{title}</h4>
      <div className="quantity-container">
         <button onClick={decreaseQuantityy}>-</button>
-        <p>Quantity: {quantity}</p>
+        <p className="m-1">Quantity: {quantity}</p>
         <button onClick={increaseQuantity}>+</button>
      </div>
      <div className="cart-item-price">
-        <h2>{price}</h2>
+        <h2>&#x20b9; {price}</h2>
      </div>
     </div>
   );

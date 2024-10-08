@@ -20,7 +20,7 @@ const Navbar: React.FC = () => {
 
   return (
     <nav className="navbar">
-      <ul className="d-flex justify-content-between">
+      <ul>
         <div>
           <li>
             <Link className="link" to="/">
