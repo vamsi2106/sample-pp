@@ -1,29 +1,26 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import Cookies from "js-cookie";
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../features/login/loginSlice";
+import { RootState } from "../store/store";
 import "../App.css";
 
 const Navbar: React.FC = () => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false); // Track login state
+  const dispatch = useDispatch();
   const navigate = useNavigate();
-
-  // Check if the user is already logged in
-  useEffect(() => {
-    const token = Cookies.get("authToken");
-    if (token) {
-      setIsAuthenticated(true); // Set authentication state if token exists
-    }
-  }, []);
+  const { isAuthenticated, user } = useSelector(
+    (state: RootState) => state.auth
+  );
+  console.log(user);
 
   const handleLogout = () => {
-    Cookies.remove("authToken"); // Remove the token from cookies
-    setIsAuthenticated(false); // Set authentication state to false after logout
+    dispatch(logout()); // Dispatch logout to clear auth state
     navigate("/login"); // Redirect to login page after logout
   };
 
   return (
     <nav className="navbar">
-      <ul>
+      <ul className="d-flex justify-content-between">
         <div>
           <li>
             <Link className="link" to="/">
@@ -51,11 +48,18 @@ const Navbar: React.FC = () => {
               </Link>
             </li>
           ) : (
-            <li>
-              <a className="link" onClick={handleLogout}>
-                Logout
-              </a>
-            </li>
+            <>
+              <li>
+                <img src={user?.userimg} className="userProfile" />
+                <span className="link">{user?.username}</span>{" "}
+                {/* Display username */}
+              </li>
+              <li>
+                <a className="link" onClick={handleLogout}>
+                  Logout
+                </a>
+              </li>
+            </>
           )}
         </div>
       </ul>

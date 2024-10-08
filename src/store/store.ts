@@ -6,11 +6,13 @@ import { combineReducers } from "redux";
 // Import your reducers
 import productReducer from "../features/products/productSlice";
 import cartReducer from "../features/cart/cartSlice";
+import loginReducer from "../features/login/loginSlice"; // Import the login slice
 
 // Combine your reducers
 const rootReducer = combineReducers({
   products: productReducer,
   cart: cartReducer,
+  auth: loginReducer,
 });
 
 // Create and export the store

@@ -131,3 +131,9 @@ footer {
 .loginPage {
   min-height: 90vh;
 }
+.userProfile {
+  border: 2px solid whitesmoke;
+  margin-right: 6px;
+  height: 5vh;
+  border-radius: 30px;
+}
