@@ -39,7 +39,7 @@ const LoginPage: React.FC = () => {
   };
 
   return (
-    <div>
+    <div className="loginPage">
       <h2>Login Page</h2>
       {error && <p style={{ color: "red" }}>{error}</p>}
       <form onSubmit={handleLogin}>
@@ -48,6 +48,7 @@ const LoginPage: React.FC = () => {
           <input
             type="text"
             value={username}
+            placeholder="emilys"
             onChange={(e) => setUsername(e.target.value)}
           />
         </div>
@@ -55,6 +56,7 @@ const LoginPage: React.FC = () => {
           <label>Password:</label>
           <input
             type="password"
+            placeholder="emilyspass"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />

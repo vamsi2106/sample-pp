@@ -122,3 +122,8 @@ footer {
   flex-wrap: wrap;
   justify-content: center;
 }
+
+/* login page */
+.loginPage {
+  min-height: 90vh;
+}

@@ -21,6 +21,12 @@ const Navbar: React.FC = () => {
             Cart
           </Link>
         </li>
+        <li>
+          <Link className="link" to="/login">
+            {" "}
+            Login
+          </Link>
+        </li>
       </ul>
     </nav>
   );
