@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { logout } from "../features/login/loginSlice";
+import { logout, checkAuth } from "../features/login/loginSlice";
 import { RootState } from "../store/store";
 import "../App.css";
 
@@ -20,7 +20,10 @@ const Navbar: React.FC = () => {
   const { isAuthenticated, user } = useSelector(
     (state: RootState) => state.auth
   );
-  console.log(user);
+
+  useEffect(() => {
+    dispatch(checkAuth()); // Check authentication state on load
+  }, [dispatch]);
 
   const handleLogout = () => {
     dispatch(logout()); // Dispatch logout to clear auth state
@@ -62,11 +65,11 @@ const Navbar: React.FC = () => {
             <>
               <li>
                 <img
-                  src="https://th.bing.com/th/id/OIP.YDyoIafIwW1tILED3HgZRQHaHa?w=190&h=190&c=7&r=0&o=5&pid=1.7"
+                  src={user?.userimg}
                   className="userProfileImg"
+                  alt="Profile"
                 />
-                <span className="link">{user?.username}</span>{" "}
-                {/* Display username */}
+                <span className="link">{user?.username}</span>
               </li>
               <li>
                 <a className="link" onClick={handleLogout}>
