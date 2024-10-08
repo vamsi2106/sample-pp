@@ -20,7 +20,7 @@ const Navbar: React.FC = () => {
 
   return (
     <nav className="navbar">
-      <ul>
+      <ul className="d-flex  justify-content-between">
         <div>
           <li>
             <Link className="link" to="/">
@@ -50,7 +50,10 @@ const Navbar: React.FC = () => {
           ) : (
             <>
               <li>
-                <img src={user?.userimg} className="userProfile" />
+                <img
+                  src="https://th.bing.com/th/id/OIP.YDyoIafIwW1tILED3HgZRQHaHa?w=190&h=190&c=7&r=0&o=5&pid=1.7"
+                  className="userProfileImg"
+                />
                 <span className="link">{user?.username}</span>{" "}
                 {/* Display username */}
               </li>
