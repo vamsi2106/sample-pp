@@ -1,6 +1,7 @@
 body {
   margin: 0px;
   padding: 0px;
+  color: aliceblue;
 }
 
 nav ul {
@@ -100,6 +101,9 @@ footer {
   margin-top: 60px;
 }
 .product-card-item {
+  background-color: aliceblue;
+  border-radius: 6px;
+  color: #1a1c1d;
   margin: 10px;
   width: 20vw;
   display: flex;
