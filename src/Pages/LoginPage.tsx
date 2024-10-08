@@ -30,7 +30,7 @@ const LoginPage: React.FC = () => {
         <div className="shape"></div>
       </div>
       <h2>Login</h2>
-      {error && <p style={{ color: "red" }}>{error}</p>}
+      
       <form onSubmit={handleLogin}>
         <label>Username:</label>
         <input
@@ -47,6 +47,7 @@ const LoginPage: React.FC = () => {
         <button type="submit" disabled={loading}>
           {loading ? "Logging in..." : "Login"}
         </button>
+        {error && <p style={{ color: "red" }}>{error}</p>}
       </form>
     </div>
   );
