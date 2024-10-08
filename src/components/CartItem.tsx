@@ -1,45 +1,49 @@
 import React from "react";
-import {addToCart,CartItemSlice,decreaseQuantity} from '../features/cart/cartSlice'
+import { addToCart, decreaseQuantity } from "../features/cart/cartSlice";
 import { useDispatch } from "react-redux";
-import { Product } from "./ProductItem";
-
-
+import "./CartItem.css";
 
 interface CartItemProps {
-  id:number,
+  id: number;
   title: string;
   quantity: number;
-  price:number,
-  item:CartItemSlice
+  price: number;
+  item: any;
 }
 
-const CartItem: React.FC<CartItemProps> = ({id, item,title, quantity, price }) => {
- 
- const dispatch=useDispatch()
+const CartItem: React.FC<CartItemProps> = ({
+  id,
+  item,
+  title,
+  quantity,
+  price,
+}) => {
+  const dispatch = useDispatch();
 
-  const decreaseQuantityy = () =>{
-    console.log("decrease clicked")
-      dispatch<any>(decreaseQuantity(id))
-      
-  }
+  const handleDecrease = () => {
+    dispatch(decreaseQuantity(id));
+  };
 
-  const increaseQuantity = () =>{
-      dispatch<any>(addToCart(item))
-  }
+  const handleIncrease = () => {
+    dispatch(addToCart(item));
+  };
 
   return (
-    <div className="cart-item">
-      <h4 className="cart-item-title">{title}</h4>
-     <div className="quantity-container">
-        <button onClick={decreaseQuantityy}>-</button>
-        <p className="m-1">Quantity: {quantity}</p>
-        <button onClick={increaseQuantity}>+</button>
-     </div>
-     <div className="cart-item-price">
-        <h2>&#x20b9; {price}</h2>
-     </div>
-    </div>
+    <tr className="cart-item">
+      <td className="cart-item-title">{title}</td>
+      <td className="cart-item-controls">
+        <button className="quantity-btn decrease-btn" onClick={handleDecrease}>
+          -
+        </button>
+        <span className="quantity-display">{quantity}</span>
+        <button className="quantity-btn increase-btn" onClick={handleIncrease}>
+          +
+        </button>
+      </td>
+      <td className="cart-item-price">&#x20b9; {price.toFixed(2)}</td>
+    </tr>
   );
 };
 
 export default CartItem;
+``;
