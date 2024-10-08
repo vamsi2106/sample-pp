@@ -4,8 +4,8 @@ const HomePage: React.FC = () => {
 
   return (
     <div className="homepage">
-      <h1>Welcome to Our E-Commerce Website!</h1>
-      <p>Find the best products here.</p>
+      <h1 className="text-center">Welcome to Our E-Commerce Website!</h1>
+      <p className="text-center">Find the best products here.</p>
     </div>
   );
 };
