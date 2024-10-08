@@ -8,7 +8,7 @@ const ProductDetailsPage: React.FC = () => {
 
   const dispatch=useDispatch()
 
-  const product:any = useSelector((s:any )=> s.products.selectedItem)
+  const product = useSelector((s:any )=> s.products.selectedItem)
   const {title,description,image,rating,category}=product
 
   const onAddToCart=()=>{

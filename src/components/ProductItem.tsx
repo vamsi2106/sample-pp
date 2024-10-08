@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { selectProduct } from "../features/products/productSlice";
 import { useNavigate } from "react-router-dom";
+import { addToCart } from "../features/cart/cartSlice";
 
 export interface Product {
   id: number;
@@ -13,7 +14,7 @@ export interface Product {
   rating: {
     rate: number;
     count: number;
-  };
+  }|null;
 }
 
 export interface ProductItemProps {
@@ -25,13 +26,17 @@ const ProductItem: React.FC<ProductItemProps> = ({
 }: ProductItemProps) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  // const selectedItem = useSelector((s:any) => s.products.selectedItem)
   const { id, title, price, description, image, rating } = productDetails;
+
+
   const onClickViewMore = () => {
-    // functionality Needs to be Completed...
     dispatch<any>(selectProduct(id));
     navigate(`/product/${id}`);
   };
+
+  const onClickAddToCart = () =>{
+    dispatch(addToCart<any>(productDetails))
+  }
 
   // console.log(selectedItem);
   return (
@@ -48,8 +53,13 @@ const ProductItem: React.FC<ProductItemProps> = ({
             <strong>Description: </strong>
             {description.slice(0, 40) + "..."}
           </p>
-          <p>Rating: {rating.rate}</p>
+          <p>Rating: {rating!.rate}</p>
         </div>
+        <button
+         type="button"
+         className="btn btn-primary"
+         onClick={onClickAddToCart}
+         >Add to Cart</button>
         <button
           type="button"
           className="btn btn-primary"
