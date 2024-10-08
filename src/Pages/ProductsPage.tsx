@@ -3,7 +3,6 @@ import ProductItem, { Product } from "../components/ProductItem";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllProducts } from "../features/products/productSlice";
 
-
 const ProductsPage: React.FC = () => {
   // const products: Product[] = [
   //   {
@@ -31,28 +30,26 @@ const ProductsPage: React.FC = () => {
   //     }
   // }
   // ];
-  const products:Product[] = useSelector((s:any )=> s.products.items)
-  const dispatch = useDispatch()
-  
+  const products: Product[] = useSelector((s: any) => s.products.items);
+  const dispatch = useDispatch();
+
   // console.log(products)
-  useEffect(() =>{
-      dispatch<any>(getAllProducts())
+  useEffect(() => {
+    dispatch<any>(getAllProducts());
+  }, []);
 
-  },[])
-
-  if(products.length === 0){
-    return <h1>Loading....</h1>
+  if (products.length === 0) {
+    return <h1>Loading....</h1>;
   }
 
   return (
     <div className="products-div">
       <h2>Products</h2>
-      {products.map((product) => (
-        <ProductItem
-          key={product.id}
-          productDetails ={product}
-        />
-      ))}
+      <div>
+        {products.map((product) => (
+          <ProductItem key={product.id} productDetails={product} />
+        ))}
+      </div>
     </div>
   );
 };

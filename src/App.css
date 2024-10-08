@@ -4,6 +4,7 @@ body {
 }
 
 nav ul {
+  width: 100%;
   list-style-type: none;
   padding: 20px;
   background-color: rgb(12, 5, 5);
@@ -37,7 +38,6 @@ footer {
   margin-bottom: 50px;
 }
 
-
 .product-item {
   border: 1px solid #ddd;
   padding: 15px;
@@ -51,11 +51,9 @@ footer {
   justify-content: space-between;
 }
 
-.quantity-container{
+.quantity-container {
   display: flex;
 }
-
-
 
 /* not-found-page.css */
 
@@ -78,14 +76,11 @@ footer {
 
 /* product-detailed-page.css */
 
-.product-detailed-page{
-
+.product-detailed-page {
   padding: 10px;
 
-
-  img{
+  img {
     height: 300px;
     width: 300px;
   }
-
 }
