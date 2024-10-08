@@ -1,0 +1,42 @@
+.cart-item {
+  text-align: left;
+  width: 127%;
+}
+
+.cart-item-title {
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+.cart-item-controls {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.quantity-btn {
+  padding: 8px 12px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 5px;
+  transition: background-color 0.3s ease;
+}
+
+.quantity-btn:hover {
+  background-color: #444;
+}
+
+.quantity-display {
+  margin: 0 10px;
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+.cart-item-price {
+  font-size: 1.2em;
+  font-weight: 500;
+  color: #ffffff;
+}
