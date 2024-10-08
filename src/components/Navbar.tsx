@@ -65,7 +65,7 @@ const Navbar: React.FC = () => {
             <>
               <li>
                 <img
-                  src={user?.userimg}
+                  src="https://res.cloudinary.com/dywrzseia/image/upload/e_background_removal/f_png/v1718281056/insta_pic_dqcbsc.jpg"
                   className="userProfileImg"
                   alt="Profile"
                 />
