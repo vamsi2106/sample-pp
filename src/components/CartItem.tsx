@@ -1,27 +1,37 @@
 import React from "react";
+import {addToCart,CartItemSlice,decreaseQuantity} from '../features/cart/cartSlice'
+import { useDispatch } from "react-redux";
+import { Product } from "./ProductItem";
+
+
 
 interface CartItemProps {
+  id:number,
   title: string;
   quantity: number;
-  price:number
+  price:number,
+  item:CartItemSlice
 }
 
-const CartItem: React.FC<CartItemProps> = ({ title, quantity, price }) => {
+const CartItem: React.FC<CartItemProps> = ({id, item,title, quantity, price }) => {
  
+ const dispatch=useDispatch()
 
-  const decreaseQuantity = () =>{
-
+  const decreaseQuantityy = () =>{
+    console.log("decrease clicked")
+      dispatch<any>(decreaseQuantity(id))
+      
   }
 
   const increaseQuantity = () =>{
-
+      dispatch<any>(addToCart(item))
   }
 
   return (
     <div className="cart-item">
       <h4 className="cart-itme-title">{title}</h4>
      <div className="quantity-container">
-        <button onClick={decreaseQuantity}>-</button>
+        <button onClick={decreaseQuantityy}>-</button>
         <p>Quantity: {quantity}</p>
         <button onClick={increaseQuantity}>+</button>
      </div>

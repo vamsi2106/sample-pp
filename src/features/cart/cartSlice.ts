@@ -7,7 +7,7 @@ interface Rating {
   count: number; 
 }
 
-interface CartItem {
+export interface CartItemSlice {
   id: number;
   name: string;
   price: number;
@@ -19,7 +19,7 @@ interface CartItem {
 }
 
 interface CartState {
-  items: CartItem[];
+  items: CartItemSlice[];
 }
 
 const initialState: CartState = {
@@ -30,7 +30,7 @@ const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
-    addToCart: (state, action: PayloadAction<CartItem>) => {
+    addToCart: (state, action: PayloadAction<CartItemSlice>) => {
       const item = state.items.find((i) => i.id === action.payload.id);
       if (item) {
         item.quantity += 1;
@@ -40,16 +40,19 @@ const cartSlice = createSlice({
       }
     },
     decreaseQuantity:(state,action)=>{
-        const item=state.items.find((item)=>item.id===action.payload.id)
-        if(item!.quantity<=0){
-            state.items=state.items.filter((i)=>i.id!==item?.id)
-        }
-        else{
-          item!.quantity+=1
+        const item=state.items.find((item)=>item.id===action.payload)
+        console.log(item)
+        if (item) {
+          if (item.quantity > 1) {
+            item.quantity -= 1; 
+            
+          } else {
+            state.items = state.items.filter((i) => i.id !== item.id); 
+          }
         }
     }
   },
 });
 
-export const { addToCart } = cartSlice.actions;
+export const {addToCart,decreaseQuantity } = cartSlice.actions;
 export default cartSlice.reducer;
