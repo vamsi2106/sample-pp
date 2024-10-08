@@ -8,6 +8,15 @@ import "../App.css";
 const Navbar: React.FC = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const {cart} = useSelector((state:any) => state)
+
+  let count = 0
+
+  if(cart.items){
+    count = cart.items.length
+  }
+
+
   const { isAuthenticated, user } = useSelector(
     (state: RootState) => state.auth
   );
@@ -17,6 +26,7 @@ const Navbar: React.FC = () => {
     dispatch(logout()); // Dispatch logout to clear auth state
     navigate("/login"); // Redirect to login page after logout
   };
+
 
   return (
     <nav className="navbar">
@@ -34,8 +44,9 @@ const Navbar: React.FC = () => {
           </li>
           <li>
             <Link className="link" to="/cart">
-              Cart
+              Cart <span>{count}</span>
             </Link>
+            
           </li>
         </div>
 
