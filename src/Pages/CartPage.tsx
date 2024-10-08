@@ -13,7 +13,7 @@ const CartPage: React.FC = () => {
   });
 
   if (cartItems.length === 0) {
-    return <h1 className="cart-empty">Your Cart is Empty!</h1>;
+    return <h1 className="cart-empty d-flex align-items-center justify-content-center">Your Cart is Empty!</h1>;
   }
 
   return (

@@ -67,4 +67,6 @@
   text-align: center;
   font-size: 1.7em;
   color: #ffffff;
+  min-height:80vh;
+  margin-top: 50px;
 }
