@@ -28,7 +28,7 @@ const CartPage: React.FC = () => {
     </div>
     <div className="cart-details-container">
           <p>
-              Total Price: {totalPrice}
+              Total Price: {totalPrice.toFixed(2)}
           </p>
           <button className="btn btn-primary">CheckOut</button>
       </div>
