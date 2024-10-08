@@ -65,14 +65,14 @@ const Navbar: React.FC = () => {
             <>
               <li>
                 <img
-                  src="https://res.cloudinary.com/dywrzseia/image/upload/e_background_removal/f_png/v1718281056/insta_pic_dqcbsc.jpg"
+                  src="https://res.cloudinary.com/dywrzseia/image/upload/v1728390416/konderhuk_f1ndyp.jpg"
                   className="userProfileImg"
                   alt="Profile"
                 />
                 <span className="link">
-                  {/* {user?.username} */}
-                  Erripook
-                  </span>
+                {/*{user?.username}*/}
+                Konderhukuu
+                </span>
               </li>
               <li>
                 <a className="link" onClick={handleLogout}>
