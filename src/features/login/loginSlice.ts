@@ -2,14 +2,12 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import Cookies from "js-cookie";
 
-// User interface
 interface User {
   id: string;
   username: string;
   userimg: string;
 }
 
-// AuthState interface
 interface AuthState {
   user: User | null;
   isAuthenticated: boolean;
@@ -17,6 +15,7 @@ interface AuthState {
   error: string | null;
 }
 
+// Async thunk for logging in
 export const loginUser = createAsyncThunk(
   "auth/loginUser",
   async (
@@ -42,7 +41,28 @@ export const loginUser = createAsyncThunk(
   }
 );
 
-// Initial state for the auth slice
+// Async thunk to check if the user is already authenticated
+export const checkAuth = createAsyncThunk(
+  "auth/checkAuth",
+  async (_, thunkAPI) => {
+    const token = Cookies.get("authToken");
+    if (token) {
+      try {
+        const response = await axios.get("/auth/me", {
+          headers: { Authorization: `Bearer ${token}` },
+          withCredentials: true,
+        });
+        const { id, username, image } = response.data;
+        return { id, username, userimg: image };
+      } catch (error) {
+        return thunkAPI.rejectWithValue("Failed to authenticate");
+      }
+    } else {
+      return thunkAPI.rejectWithValue("No token found");
+    }
+  }
+);
+
 const initialState: AuthState = {
   user: null,
   isAuthenticated: false,
@@ -50,7 +70,6 @@ const initialState: AuthState = {
   error: null,
 };
 
-// Create the auth slice
 const loginSlice = createSlice({
   name: "auth",
   initialState,
@@ -70,16 +89,23 @@ const loginSlice = createSlice({
       .addCase(loginUser.fulfilled, (state, action) => {
         state.loading = false;
         state.isAuthenticated = true;
-        state.user = action.payload; // This should now be of type User
+        state.user = action.payload;
       })
       .addCase(loginUser.rejected, (state, action) => {
         state.loading = false;
         state.isAuthenticated = false;
-        state.error = action.payload as string; // Ensure this is a string
+        state.error = action.payload as string;
+      })
+      .addCase(checkAuth.fulfilled, (state, action) => {
+        state.isAuthenticated = true;
+        state.user = action.payload;
+      })
+      .addCase(checkAuth.rejected, (state) => {
+        state.isAuthenticated = false;
+        state.user = null;
       });
   },
 });
 
 export const { logout } = loginSlice.actions;
-
 export default loginSlice.reducer;

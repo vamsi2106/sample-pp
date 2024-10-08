@@ -3,18 +3,17 @@ body {
   padding: 0px;
   color: aliceblue;
 }
-nav {
-}
 
 nav ul {
   width: 100%;
   list-style-type: none;
   padding: 20px;
-  background-color: rgb(12, 5, 5);
+  background-color: rgb(21, 22, 29);
   color: aliceblue;
   position: fixed;
   margin-top: 60px;
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
 }
