@@ -182,6 +182,6 @@ footer {
   height: 50px;
   width: 50px;
   border: 2px solid whitesmoke;
-  margin-right: 5px;
-  border-radius: 20px;
+  margin-right: 10px;
+  border-radius: 50%;
 }
